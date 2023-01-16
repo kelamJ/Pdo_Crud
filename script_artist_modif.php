@@ -6,7 +6,7 @@
 
     // En cas d'erreur, on renvoie vers le formulaire
     if ($id == Null) {
-        header("Location: artists.php");
+        header("Location: artist.php");
     }
     elseif ($nom == Null || $url == Null) {
         header("Location: artist_form.php?id=".$id);
