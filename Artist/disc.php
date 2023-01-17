@@ -19,7 +19,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDO - Liste</title>
+    <title>Disc page</title>
 </head>
 <body>
 <!-- // Début de page : traitement PHP + entête HTML
@@ -28,7 +28,7 @@
     <table>
         <tr>
             <th>Liste des disques</th>
-            <!-- Ici, on ajoute une colonne pour insérer un lien -->
+            <!-- Ici, on ajoute une colonne pour insérer un nouveau disque-->
             <th><button name="ajouter"><a href="disc_new.php">Ajouter</a></button></th>
         </tr>
 
@@ -41,7 +41,7 @@
             <td>Year :<?= $disc->disc_year ?></td>
             <td>Genre :<?= $disc->disc_genre ?></td>
             <!-- Ici, on ajoute un lien par artiste pour accéder à sa fiche : -->
-            <td><a href="disc_detail.php?id=<?= $disc->disc_id ?>">Détail</a></td>
+            <td><a href="disc_detail.php?id=<?= $disc->artist_id ?>">Détail</a></td>
         </tr>
         <?php endforeach; ?>
 
