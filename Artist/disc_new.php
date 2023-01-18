@@ -2,8 +2,8 @@
 // On charge l'enregistrement correspondant à l'ID passé en paramètre :
     require "db.php";
     $db = connexionBase();
-    $requete = $db->query("SELECT * FROM disc JOIN artist ON artist.artist_id = disc.artist_id;");
-    $tableau = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete = $db->query("SELECT * FROM disc JOIN artist ON disc.artist_id = artist.artist_id");
+    $tableauD = $requete->fetchAll(PDO::FETCH_OBJ);
     $requete->closeCursor();
 
 ?>
@@ -29,12 +29,13 @@
 
         <label for="title_for_label">Title</label><br>
         <input type="text" name="title" id="title_for_label">
-        <br><br>
-        <label for="artist_for_label">Artist</label><br>
-        <select name="roll" id="roll">
-            <option disabled selected>Sélectionner</option>
-            <?php foreach($tableau as $disc):?>
-                <option value="<?=$disc->artist_name?>"><?=$disc->artist_name?></option>
+        <br>
+        
+        <label for="nom_for_label">Artist</label><br>
+        <select name="nom" id="nom_for_label" class="col-12">
+            <option disabled selected>Sélectionner un artiste</option>
+            <?php foreach($tableauD as $disc):?>
+                <option value="<?=$disc->artist_id?>"><?=$disc->artist_name?></option>
             <?php endforeach; ?>
         </select>
         
@@ -42,7 +43,7 @@
         <br><br>
 
         <label for="annee_for_label">Year</label><br>
-        <input type="text" name="annee" id="annee_for_label">
+        <input type="text" name="year" id="annee_for_label">
         <br><br>
 
         <label for="genre_for_label">Genre</label><br>
