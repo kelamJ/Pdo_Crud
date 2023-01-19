@@ -21,7 +21,8 @@
 
     try {
         // Construction de la requête INSERT sans injection SQL :
-        $requete = $db->prepare("INSERT INTO disc (disc_title, disc_year, disc_picture, disc_label, disc_genre, disc_price, artist_id) VALUES (:title, :year, :fichier, :label, :genre, :price, :nom);");
+        $requete = $db->prepare("INSERT INTO disc (disc_title, disc_year, disc_picture, disc_label, disc_genre, disc_price, artist_id) 
+        VALUES (:title, :year, :fichier, :label, :genre, :price, :nom);");
     
         // Association des valeurs aux paramètres via bindValue() :
         $requete->bindValue(":title", $title, PDO::PARAM_STR);
