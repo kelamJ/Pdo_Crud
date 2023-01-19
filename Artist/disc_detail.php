@@ -51,12 +51,12 @@
         <input value="<?= $myArtist->disc_price; ?>" type="text" name="price" id="price_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
-        <label for="image_for_label">Picture</label><br>
-        <input value="" type="image" name="picture" src="img/<?= $myArtist->disc_picture; ?>" width="250px" id="image_for_label<?php echo $myArtist->disc_title; ?>">
+        <label for="fichier_for_label">Picture</label><br>
+        <input value="" type="file" name="fichier" src="img/<?= $myArtist->disc_picture; ?>" width="250px" id="image_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
-        <a href="artist_form.php?id=<?=$myArtist->disc_id?>">Modifier</a>
-        <a href="script_artist_delete.php?id=<?= $myArtist->disc_id ?>">Supprimer</a>
-        <a href="disc.php">Retour</a>
+        <button><a href="disc_form.php?id=<?=$myArtist->disc_id?>">Modifier</a></button>
+        <button><a href="script_disc_delete.php?id=<?= $myArtist->disc_id ?>">Supprimer</a></button>
+        <button><a href="disc.php">Retour</a></button>
     </body>
 </html>

@@ -20,8 +20,6 @@
 
     <h1>Ajouter un vinyle</h1>
 
-    <button><a href="disc.php">Retour à la liste des vinyles</a></button>
-
     <br>
     <br>
 
@@ -63,6 +61,7 @@
         <br><br>
 
         <input type="submit" value="Ajouter">
+        <button><a href="disc.php">Retour</a></button>
 
     </form>
 </body>
