@@ -29,30 +29,30 @@
     </head>
     <body>
         <label for="title_for_label">Title</label><br>
-        <input value="<?php echo $myArtist->disc_title; ?>" type="text" name="title" id="title_for_label<?php echo $myArtist->disc_title; ?>">
+        <input disabled value="<?php echo $myArtist->disc_title; ?>" type="text" name="title" id="title_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
         <label for="artist_for_label">Artist</label><br>
-        <input value="<?php echo $myArtist->artist_name; ?>" type="text" name="artist" id="artist_for_label<?php echo $myArtist->disc_title; ?>">
+        <input disabled value="<?php echo $myArtist->artist_name; ?>" type="text" name="artist" id="artist_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
         <label for="year_for_label">Year</label><br>
-        <input value="<?= $myArtist->disc_year; ?>" type="text" name="year" id="year_for_label<?php echo $myArtist->disc_title; ?>">
+        <input disabled value="<?= $myArtist->disc_year; ?>" type="text" name="year" id="year_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
         <label for="genre_for_label">Genre</label><br>
-        <input value="<?= $myArtist->disc_genre; ?>" type="text" name="genre" id="genre_for_label<?php echo $myArtist->disc_title; ?>">
+        <input disabled value="<?= $myArtist->disc_genre; ?>" type="text" name="genre" id="genre_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
         <label for="label_for_label">Label</label><br>
-        <input value="<?= $myArtist->disc_label; ?>" type="text" name="label" id="label_for_label<?php echo $myArtist->disc_title; ?>">
+        <input disabled value="<?= $myArtist->disc_label; ?>" type="text" name="label" id="label_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
         <label for="price_for_label">Price</label><br>
-        <input value="<?= $myArtist->disc_price; ?>" type="text" name="price" id="price_for_label<?php echo $myArtist->disc_title; ?>">
+        <input disabled value="<?= $myArtist->disc_price; ?>" type="text" name="price" id="price_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
         <label for="fichier_for_label">Picture</label><br>
-        <input value="" type="file" name="fichier" src="img/<?= $myArtist->disc_picture; ?>" width="250px" id="image_for_label<?php echo $myArtist->disc_title; ?>">
+        <input disabled value="" type="file" name="fichier" src="img/<?= $myArtist->disc_picture; ?>" width="250px" id="image_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
         <button><a href="disc_form.php?id=<?=$myArtist->disc_id?>">Modifier</a></button>
