@@ -4,7 +4,7 @@
     $db = connexionBase();
     $requete = $db->prepare("SELECT * FROM disc JOIN artist ON disc.artist_id = artist.artist_id WHERE disc_id=?");
     $requete->execute(array($_GET["id"]));
-    $myDisc = $requete->fetch(PDO::FETCH_OBJ);
+    $tableauF = $requete->fetch(PDO::FETCH_OBJ);
     $requete->closeCursor();
 ?>
 
@@ -19,45 +19,44 @@
 </head>
 <body>
 
-    <h1>Disc n°<?php echo $myDisc->disc_id; ?></h1>
+    <h1>Disc n°<?php echo $tableauF->disc_id; ?></h1>
 
     <a href="disc.php">Retour à la liste des disques</a>
 
     <br>
     <br>
 
-    <form action ="script_disc_modif.php" method="post">
-    <input type="hidden" name="id" value="<?= $myDisc->disc_id ?>">
+    <form action ="script_disc_modif.php" method="post" nctype="multipart/form-data">
+    <input hidden type="text" name="id" value="<?= $tableauF->disc_id ?>">
 
-        <label for="nom_for_label">Title :</label><br>
-        <input type="text" name="nom" id="nom_for_label" value="<?= $myDisc->disc_title ?>">
+        <label for="title_for_label">Title :</label><br>
+        <input type="text" name="title" id="title_for_label" value="<?= $tableauF->disc_title ?>">
         <br><br>
 
-        <label for="nom_for_label">Nom de l'artiste :</label><br>
-        <input type="text" name="nom" id="nom_for_label" value="<?= $myDisc->artist_name ?>">
-        <br><br>
+        <label for="artist_for_label">Artist</label><br>
+        <input type="text" name="artist" id="artist_for_label" value="<?= $tableauF->artist_name ?>">        <br><br>
 
         <label for="year_for_label">Year</label><br>
-        <input type="text" name="year" id="year_for_label" value="<?= $myDisc->disc_year ?>">
+        <input type="text" name="year" id="year_for_label" value="<?= $tableauF->disc_year ?>">
         <br><br>
 
         <label for="genre_for_label">Genre</label><br>
-        <input type="text" name="genre" id="genre_for_label" value="<?= $myDisc->disc_genre ?>">
+        <input type="text" name="genre" id="genre_for_label" value="<?= $tableauF->disc_genre ?>">
         <br><br>
 
         <label for="label_for_label">Label</label><br>
-        <input type="text" name="label" id="label_for_label" value="<?= $myDisc->disc_label ?>">
+        <input type="text" name="label" id="label_for_label" value="<?= $tableauF->disc_label ?>">
         <br><br>
 
         <label for="price_for_label">Price</label><br>
-        <input type="text" name="price" id="price_for_label" value="<?= $myDisc->disc_price ?>">
+        <input type="text" name="price" id="price_for_label" value="<?= $tableauF->disc_price ?>">
         <br><br>
 
         <label for="fichier_for_label">Picture</label><br>
-        <input type="file" name="fichier" id="fichier_for_label" value="<?= $myDisc->disc_picture ?>">
+        <input type="file" name="fichier" id="fichier_for_label" value="<?= $tableauF->disc_picture ?>">
         <br><br>
 
-        <input type="reset" value="Annuler">
+        <button><a href="disc_detail.php">Retour</a></button>
         <input type="submit" value="Modifier">
 
     </form>
