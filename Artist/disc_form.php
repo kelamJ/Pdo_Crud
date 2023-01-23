@@ -26,7 +26,7 @@
     <br>
     <br>
 
-    <form action ="script_disc_modif.php" method="post" nctype="multipart/form-data">
+    <form action ="script_disc_modif.php" method="post">
     <input hidden type="text" name="id" value="<?= $tableauF->disc_id ?>">
 
         <label for="title_for_label">Title :</label><br>
@@ -53,12 +53,12 @@
         <br><br>
 
         <label for="fichier_for_label">Picture</label><br>
-        <input type="file" name="fichier" id="fichier_for_label" value="<?= $tableauF->disc_picture ?>">
+        <input type="file" name="fichier" id="fichier_for_label">
         <br><br>
 
-        <button><a href="disc_detail.php">Retour</a></button>
         <input type="submit" value="Modifier">
 
     </form>
+    <button><a href="disc.php">Retour</a></button>
 </body>
 </html>

@@ -8,6 +8,7 @@
     $price = (isset($_POST['price']) && $_POST['price'] != "") ? $_POST['price'] : Null;
     $fichier = (isset($_POST['fichier']) && $_POST['fichier'] != "") ? $_POST['fichier'] : Null;
     $artist = (isset($_POST['artist']) && $_POST['artist'] != "") ? $_POST['artist'] : Null;
+    
     // En cas d'erreur, on renvoie vers le formulaire
     if ($id == Null) {
         header("Location: disc.php");
@@ -23,7 +24,10 @@
     
     try {
         // Construction de la requête UPDATE sans injection SQL :
-        $requete = $db->prepare("UPDATE disc SET disc_title = :title, disc_year = :year, disc_picture = :fichier, disc_label = :label, disc_genre = :genre, disc_price = :price, artist_name = :artist  WHERE disc_id = :id;");
+        $requete = $db->prepare("UPDATE disc JOIN artist ON disc.artist_id = artist.artist_id
+        SET disc_title = :title, disc_year = :year, disc_genre = :genre, disc_label = :label, disc_price = :price, disc_picture = :fichier, artist_name = :artist
+        WHERE disc_id = :id;");
+
         $requete->bindValue(":id", $id, PDO::PARAM_INT);
         $requete->bindValue(":title", $title, PDO::PARAM_STR);
         $requete->bindValue(":year", $year, PDO::PARAM_STR);
@@ -42,8 +46,8 @@
         die("Fin du script (script_disc_modif.php)");
     }
 
-    // Si OK: redirection vers la page disc_detail.php
-    header("Location: disc_detail.php?id=" . $id);
+    // Si OK: redirection vers la page disc.php
+    header("Location: disc.php" . $id);
     exit;
 
 ?>
