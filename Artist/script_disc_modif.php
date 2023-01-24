@@ -9,7 +9,7 @@
     $fichier = (isset($_POST['fichier']) && $_POST['fichier'] != "") ? $_POST['fichier'] : Null;
     $artist = (isset($_POST['artist']) && $_POST['artist'] != "") ? $_POST['artist'] : Null;
     
-    // En cas d'erreur, on renvoie vers le formulaire
+    // En cas d'erreur, on renvoie vers la page disc
     if ($id == Null) {
         header("Location: disc.php");
     }
@@ -45,9 +45,8 @@
         echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
         die("Fin du script (script_disc_modif.php)");
     }
-
     // Si OK: redirection vers la page disc.php
-    header("Location: disc.php" . $id);
+    header("Location: disc_detail.php" ."?id=" . $id);
     exit;
 
 ?>

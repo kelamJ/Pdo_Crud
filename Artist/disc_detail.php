@@ -52,7 +52,7 @@
         <br><br>
 
         <label for="fichier_for_label">Picture</label><br>
-        <input disabled value="" type="file" name="fichier" src="img/<?= $myArtist->disc_picture; ?>" width="250px" id="image_for_label<?php echo $myArtist->disc_title; ?>">
+        <input  value="" type="image" name="fichier" src="img/<?= $myArtist->disc_picture; ?>" width="200px" id="image_for_label<?php= $myArtist->disc_title; ?>">
         <br><br>
 
         <button><a href="disc_form.php?id=<?=$myArtist->disc_id?>">Modifier</a></button>

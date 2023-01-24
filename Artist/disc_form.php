@@ -2,7 +2,7 @@
 // On charge l'enregistrement correspondant à l'ID passé en paramètre :
     require "db.php";
     $db = connexionBase();
-    $requete = $db->prepare("SELECT * FROM disc JOIN artist ON disc.artist_id = artist.artist_id WHERE disc_id=?");
+    $requete = $db->prepare("SELECT * FROM disc JOIN artist ON artist.artist_id = disc.artist_id WHERE disc_id=?");
     $requete->execute(array($_GET["id"]));
     $tableauF = $requete->fetch(PDO::FETCH_OBJ);
     $requete->closeCursor();
@@ -27,7 +27,7 @@
     <br>
 
     <form action ="script_disc_modif.php" method="post">
-    <input hidden type="text" name="id" value="<?= $tableauF->disc_id ?>">
+    <input hidden type="text" name="id" value="<?= $tableauF->disc_id?>">
 
         <label for="title_for_label">Title :</label><br>
         <input type="text" name="title" id="title_for_label" value="<?= $tableauF->disc_title ?>">
@@ -54,7 +54,9 @@
 
         <label for="fichier_for_label">Picture</label><br>
         <input type="file" name="fichier" id="fichier_for_label">
-        <br><br>
+        <br>
+        <input  value="" type="image" name="fichier" src="img/<?= $tableauF->disc_picture; ?>" width="200px" id="image_for_label<?php= $myArtist->disc_title; ?>">
+        <br>
 
         <input type="submit" value="Modifier">
 
