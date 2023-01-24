@@ -30,34 +30,34 @@
     </head>
     <body>
         <label for="title_for_label">Title</label><br>
-        <input disabled value="<?php echo $myArtist->disc_title; ?>" type="text" name="title" id="title_for_label<?php echo $myArtist->disc_title; ?>">
+        <input class="form-control" disabled value="<?php echo $myArtist->disc_title; ?>" type="text" name="title" id="title_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
         <label for="artist_for_label">Artist</label><br>
-        <input disabled value="<?php echo $myArtist->artist_name; ?>" type="text" name="artist" id="artist_for_label<?php echo $myArtist->disc_title; ?>">
+        <input class="form-control" disabled value="<?php echo $myArtist->artist_name; ?>" type="text" name="artist" id="artist_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
         <label for="year_for_label">Year</label><br>
-        <input disabled value="<?= $myArtist->disc_year; ?>" type="text" name="year" id="year_for_label<?php echo $myArtist->disc_title; ?>">
+        <input class="form-control" disabled value="<?= $myArtist->disc_year; ?>" type="text" name="year" id="year_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
         <label for="genre_for_label">Genre</label><br>
-        <input disabled value="<?= $myArtist->disc_genre; ?>" type="text" name="genre" id="genre_for_label<?php echo $myArtist->disc_title; ?>">
+        <input class="form-control" disabled value="<?= $myArtist->disc_genre; ?>" type="text" name="genre" id="genre_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
         <label for="label_for_label">Label</label><br>
-        <input disabled value="<?= $myArtist->disc_label; ?>" type="text" name="label" id="label_for_label<?php echo $myArtist->disc_title; ?>">
+        <input class="form-control" disabled value="<?= $myArtist->disc_label; ?>" type="text" name="label" id="label_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
         <label for="price_for_label">Price</label><br>
-        <input disabled value="<?= $myArtist->disc_price; ?>" type="text" name="price" id="price_for_label<?php echo $myArtist->disc_title; ?>">
+        <input class="form-control" disabled value="<?= $myArtist->disc_price; ?>" type="text" name="price" id="price_for_label<?php echo $myArtist->disc_title; ?>">
         <br><br>
 
         <label for="fichier_for_label">Picture</label><br>
-        <input  value="" type="image" name="fichier" src="img/<?= $myArtist->disc_picture; ?>" width="200px" id="image_for_label<?php= $myArtist->disc_title; ?>">
+        <input value="" type="image" name="fichier" src="img/<?= $myArtist->disc_picture; ?>" width="200px" id="image_for_label<?php= $myArtist->disc_title; ?>">
         <br><br>
 
-        <button><a href="disc_form.php?id=<?=$myArtist->disc_id?>">Modifier</a></button>
-        <button id="button_delete" onclick="clicked(event)"><a href="script_disc_delete.php?id=<?= $myArtist->disc_id ?>">Supprimer</a></button>
+        <button class="btn btn-primary btn-sm"><a class="btn btn-primary" href="disc_form.php?id=<?=$myArtist->disc_id?>">Modifier</a></button>
+        <button class="btn btn-primary btn-sm" id="button_delete" onclick="clicked(event)"><a class="btn btn-primary" href="script_disc_delete.php?id=<?= $myArtist->disc_id ?>">Supprimer</a></button>
         <script>
             function clicked(e)
             {
@@ -66,7 +66,7 @@
                 }
             }
         </script>
-        <button><a href="disc.php">Retour</a></button>
+        <button class="btn btn-primary btn-sm"><a class="btn btn-primary" href="disc.php">Retour</a></button>
 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

@@ -7,10 +7,17 @@
 
     // on lance une requête pour chercher toutes les fiches de disc
     $requete = $db->query("SELECT * FROM disc JOIN artist ON artist.artist_id = disc.artist_id");
+    $requete2 = $db->prepare("SELECT COUNT(disc_id) FROM disc");
     // on récupère tous les résultats trouvés dans une variable
+    
     $tableau = $requete->fetchAll(PDO::FETCH_OBJ);
+    
+    $tableau2 = $requete2->fetch(PDO::FETCH_OBJ);
+    $tableau2 = $requete2->execute();
     // on clôt la requête en BDD
     $requete->closeCursor();
+var_dump($requete2);
+
 ?>
 
 <!DOCTYPE html>
@@ -26,12 +33,12 @@
 <body>
 <!-- // Début de page : traitement PHP + entête HTML
 // ... -->
-
+<h1>Liste des disques <?= $tableau2 ?></h1>
     <table>
         <tr>
-            <th>Liste des disques</th>
+            <th></th>
             <!-- Ici, on ajoute une colonne pour insérer un nouveau disque-->
-            <th><button name="ajouter"><a href="disc_new.php">Ajouter</a></button></th>
+            <th><button class="btn btn-primary btn-sm" name="ajouter"><a class="btn btn-primary" href="disc_new.php">Ajouter</a></button></th>
         </tr>
 
         <?php foreach ($tableau as $disc): ?>
@@ -43,7 +50,7 @@
             <td>Year :<?= $disc->disc_year ?></td>
             <td>Genre :<?= $disc->disc_genre ?></td>
             <!-- Ici, on ajoute un lien par artiste pour accéder à sa fiche : -->
-            <td><a href="disc_detail.php?id=<?= $disc->disc_id ?>">Détail</a></td>
+            <td class="col-3"><a class="btn btn-primary" href="disc_detail.php?id=<?= $disc->disc_id ?>">Détails</a></td>
         </tr>
         <?php endforeach; ?>
 
