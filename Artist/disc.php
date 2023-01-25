@@ -11,15 +11,13 @@
     // on récupère tous les résultats trouvés dans une variable
     
     $tableau = $requete->fetchAll(PDO::FETCH_OBJ);
+    $requete2->execute();
     
-    $tableau2 = $requete2->fetch(PDO::FETCH_OBJ);
-    $tableau2 = $requete2->execute();
     // on clôt la requête en BDD
     $requete->closeCursor();
-var_dump($requete2);
+    $result = $requete2->fetchColumn();
 
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -33,27 +31,52 @@ var_dump($requete2);
 <body>
 <!-- // Début de page : traitement PHP + entête HTML
 // ... -->
-<h1>Liste des disques <?= $tableau2 ?></h1>
+
     <table>
         <tr>
-            <th></th>
+            <th class="col-6"><h1>Liste des disques(<?= $result?>) </h1></th>
             <!-- Ici, on ajoute une colonne pour insérer un nouveau disque-->
-            <th><button class="btn btn-primary btn-sm" name="ajouter"><a class="btn btn-primary" href="disc_new.php">Ajouter</a></button></th>
+            <th class="col-4"><button class="btn btn-primary btn-sm" name="ajouter"><a class="btn-primary" href="disc_new.php">Ajouter</a></button></th>
         </tr>
 
         <?php foreach ($tableau as $disc): ?>
-        <tr>
-            <td> <img src="img/<?= $disc->disc_picture?>" alt="jaquette" height="150px" width="150px"></td>
-            <td><?= $disc->disc_title ?></td>
-            <td><?= $disc->artist_name ?></td>
-            <td>Label :<?= $disc->disc_label ?></td>
-            <td>Year :<?= $disc->disc_year ?></td>
-            <td>Genre :<?= $disc->disc_genre ?></td>
-            <!-- Ici, on ajoute un lien par artiste pour accéder à sa fiche : -->
-            <td class="col-3"><a class="btn btn-primary" href="disc_detail.php?id=<?= $disc->disc_id ?>">Détails</a></td>
+        <div class="row">
+        <div class="">
+        <tr class="d-flex align-self-start">
+            <div class="">
+                <div class="">
+                    <td hidden name="id" value="<?=$disc->disc_id?>"></td>
+                <td class=""> 
+                    <img class=" flex-column" src="img/<?= $disc->disc_picture?>" alt="jaquette" height="150px" width="150px">
+                </td>
+            </div>
         </tr>
+        </div>
+        <div class="">
+            <tr class="d-flex flex-column">
+                <td class="font-weight-bold">
+                    <?= $disc->disc_title ?>
+                </td>
+                <td class="d-flex align-items-start">
+                    <?= $disc->artist_name ?>
+                </td>
+                    <td class="d-flex align-items-start">
+                    <strong>Label :</strong><?= $disc->disc_label ?>
+                </td>
+                <td class="d-flex align-items-start">
+                    <strong>Year :</strong><?= $disc->disc_year ?>
+                </td>
+                <td class="d-flex align-items-start">
+                    <strong>Genre :</strong><?= $disc->disc_genre ?>
+                </td>
+                </tr>
+                <!-- Ici, on ajoute un lien par artiste pour accéder à sa fiche : -->
+                <td class="">
+                    <a class="btn btn-primary" href="disc_detail.php?id=<?= $disc->disc_id ?>">Détails</a>
+                </td>
+            </tr>
+        </div>
         <?php endforeach; ?>
-
     </table>
 <!-- 
 // Fin de page : fermetures de blocs HTML -->

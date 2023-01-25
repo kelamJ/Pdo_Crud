@@ -32,26 +32,26 @@
     <input hidden type="text" name="id" value="<?= $tableauF->disc_id?>">
 
         <label for="title_for_label">Title :</label><br>
-        <input type="text" name="title" id="title_for_label" value="<?= $tableauF->disc_title ?>">
+        <input class="form-control" type="text" name="title" id="title_for_label" value="<?= $tableauF->disc_title ?>">
         <br><br>
 
         <label for="artist_for_label">Artist</label><br>
-        <input type="text" name="artist" id="artist_for_label" value="<?= $tableauF->artist_name ?>">        <br><br>
+        <input class="form-control" type="text" name="artist" id="artist_for_label" value="<?= $tableauF->artist_name ?>">        <br><br>
 
         <label for="year_for_label">Year</label><br>
-        <input type="text" name="year" id="year_for_label" value="<?= $tableauF->disc_year ?>">
+        <input class="form-control" type="text" name="year" id="year_for_label" value="<?= $tableauF->disc_year ?>">
         <br><br>
 
         <label for="genre_for_label">Genre</label><br>
-        <input type="text" name="genre" id="genre_for_label" value="<?= $tableauF->disc_genre ?>">
+        <input class="form-control" type="text" name="genre" id="genre_for_label" value="<?= $tableauF->disc_genre ?>">
         <br><br>
 
         <label for="label_for_label">Label</label><br>
-        <input type="text" name="label" id="label_for_label" value="<?= $tableauF->disc_label ?>">
+        <input class="form-control" type="text" name="label" id="label_for_label" value="<?= $tableauF->disc_label ?>">
         <br><br>
 
         <label for="price_for_label">Price</label><br>
-        <input type="text" name="price" id="price_for_label" value="<?= $tableauF->disc_price ?>">
+        <input class="form-control" type="text" name="price" id="price_for_label" value="<?= $tableauF->disc_price ?>">
         <br><br>
 
         <label for="fichier_for_label">Picture</label><br>
@@ -60,10 +60,9 @@
         <input  value="" type="image" name="fichier" src="img/<?= $tableauF->disc_picture; ?>" width="200px" id="image_for_label<?php= $myArtist->disc_title; ?>">
         <br>
 
-        <input type="submit" value="Modifier">
-
+        <input class="btn btn-primary" type="submit" value="Modifier">
+        <button class="btn btn-primary" ><a class="btn-primary" href="disc.php">Retour</a></button>
     </form>
-    <button><a href="disc.php">Retour</a></button>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
