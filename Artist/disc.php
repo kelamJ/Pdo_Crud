@@ -31,53 +31,57 @@
 <body>
 <!-- // Début de page : traitement PHP + entête HTML
 // ... -->
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
 
-    <table>
-        <tr>
-            <th class="col-6"><h1>Liste des disques(<?= $result?>) </h1></th>
+        </div>
+    </div>
+</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+
+                </div>
+            </div>
+        </div> 
+        <div class="row p-3">
+            <h3 class="col-8 ">Liste des disques(<?= $result?>) </h3>
             <!-- Ici, on ajoute une colonne pour insérer un nouveau disque-->
-            <th class="col-4"><button class="btn btn-primary btn-sm" name="ajouter"><a class="btn-primary" href="disc_new.php">Ajouter</a></button></th>
-        </tr>
+            <button class="btn-primary" name="ajouter"><a class="btn-primary" href="disc_new.php">Ajouter</a></button>
+        </div>
+    <table>
 
         <?php foreach ($tableau as $disc): ?>
-        <div class="row">
-        <div class="">
-        <tr class="d-flex align-self-start">
-            <div class="">
-                <div class="">
-                    <td hidden name="id" value="<?=$disc->disc_id?>"></td>
-                <td class=""> 
-                    <img class=" flex-column" src="img/<?= $disc->disc_picture?>" alt="jaquette" height="150px" width="150px">
+        <tr>
+                <td hidden name="id" value="<?=$disc->disc_id?>"></td>
+                <td> 
+                    <img class="flex-column" src="img/<?= $disc->disc_picture?>" alt="jaquette" height="150px" width="150px">
                 </td>
-            </div>
-        </tr>
-        </div>
-        <div class="">
-            <tr class="d-flex flex-column">
-                <td class="font-weight-bold">
-                    <?= $disc->disc_title ?>
-                </td>
-                <td class="d-flex align-items-start">
-                    <?= $disc->artist_name ?>
-                </td>
-                    <td class="d-flex align-items-start">
-                    <strong>Label :</strong><?= $disc->disc_label ?>
-                </td>
-                <td class="d-flex align-items-start">
-                    <strong>Year :</strong><?= $disc->disc_year ?>
-                </td>
-                <td class="d-flex align-items-start">
-                    <strong>Genre :</strong><?= $disc->disc_genre ?>
-                </td>
-                </tr>
-                <!-- Ici, on ajoute un lien par artiste pour accéder à sa fiche : -->
-                <td class="">
-                    <a class="btn btn-primary" href="disc_detail.php?id=<?= $disc->disc_id ?>">Détails</a>
+                <td class="fs-6">
+                    <span class="fs-1">
+                        <?= $disc->disc_title ?>
+                </span>
+                <br>
+                    <span class="fs-2">
+                        <?= $disc->artist_name ?> <br>
+                    </span>
+                    <span class="fw-bold">
+                        Label :</span><?= $disc->disc_label ?> <br>
+                    <span class="fw-bold">
+                        Year :</span><?= $disc->disc_year ?> <br>
+                    <span class="fw-bold">
+                        Genre :</span> <?= $disc->disc_genre ?> <br>
+                        <!-- Ici, on ajoute un lien par artiste pour accéder à sa fiche : -->
+                        <span class="">
+                            <a class="btn-primary btn-sm" href="disc_detail.php?id=<?= $disc->disc_id ?>">Détails</a>
+                        </span>
                 </td>
             </tr>
-        </div>
         <?php endforeach; ?>
     </table>
+    </div>
 <!-- 
 // Fin de page : fermetures de blocs HTML -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

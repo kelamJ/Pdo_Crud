@@ -74,20 +74,28 @@
 <br>
 
     <button class="btn-primary btn-sm"><a class="btn-primary" href="disc_form.php?id=<?=$myArtist->disc_id?>">Modifier</a></button>
-    <button class=" btn-primary btn-sm" id="button_delete" onclick="clicked(event)"><a class="btn-primary" href="script_disc_delete.php?id=<?= $myArtist->disc_id ?>">Supprimer</a></button>
-        <script>
-            function clicked(e)
-            {
-                if(!confirm('Vous êtes sûr de supprimer ?')){
-                    e(event).preventDefault;
-                }
-                else {
-                }
-            }
-        </script>
+    <div class="button_delete">
+                <button><a href="script_disc_delete.php?id=" onclick="return action()">Supprimer</a></button>
+            </div>
+    <script>
+    function action()
+    {
+        const ok = confirm("Etes-vous sûr de vouloir supprimer le disc <?= $myArtist->disc_id ?> ?");
+        if (ok)
+        {
+            alert("Le disc a été supprimé");
+            return true;
+        }
+        else
+        {
+            alert("Abandon");
+            return false;
+        }
+    }
+</script>
         <button class="btn-primary btn-sm"><a class="btn-primary" href="disc.php">Retour</a></button>
 
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
