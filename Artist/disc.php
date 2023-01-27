@@ -29,30 +29,15 @@
     <title>Disc page</title>
 </head>
 <body>
-<!-- // Début de page : traitement PHP + entête HTML
-// ... -->
-<div class="row">
-    <div class="col-sm-6">
-        <div class="card">
-
-        </div>
-    </div>
-</div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-
-                </div>
-            </div>
-        </div> 
+<!-- // Début de page : traitement PHP + entête HTML  // ... -->
         <div class="row p-3">
             <h3 class="col-8 ">Liste des disques(<?= $result?>) </h3>
             <!-- Ici, on ajoute une colonne pour insérer un nouveau disque-->
             <button class="btn-primary" name="ajouter"><a class="btn-primary btn-sm" href="disc_new.php">Ajouter</a></button>
         </div>
+        <div class="card-deck">
+            <div class="card">
     <table>
-
         <?php foreach ($tableau as $disc): ?>
         <tr>
                 <td hidden name="id" value="<?=$disc->disc_id?>"></td>
@@ -81,6 +66,10 @@
             </tr>
         <?php endforeach; ?>
     </table>
+            </div>
+
+        </div>
+
     </div>
 <!-- 
 // Fin de page : fermetures de blocs HTML -->
