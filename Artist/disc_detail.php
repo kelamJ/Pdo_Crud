@@ -74,9 +74,7 @@
 <br>
 
     <button class="btn-primary btn-sm"><a class="btn-primary" href="disc_form.php?id=<?=$myArtist->disc_id?>">Modifier</a></button>
-    <div class="button_delete">
-                <button><a href="script_disc_delete.php?id=" onclick="return action()">Supprimer</a></button>
-            </div>
+                <button class="btn-primary btn-sm"><a class="btn-primary" href="script_disc_delete.php?id=" onclick="return action()">Supprimer</a></button>
     <script>
     function action()
     {

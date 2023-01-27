@@ -21,43 +21,39 @@
 </head>
 <body>
 
-    <h1>Disc n°<?php echo $tableauF->disc_id; ?></h1>
-
-    <a href="disc.php">Retour à la liste des disques</a>
-
-    <br>
-    <br>
+    <h1>Modifier un vinyle</h1>
 
     <form action ="script_disc_modif.php" method="post">
     <input hidden type="text" name="id" value="<?= $tableauF->disc_id?>">
 
-        <label for="title_for_label">Title :</label><br>
-        <input class="form-control" type="text" name="title" id="title_for_label" value="<?= $tableauF->disc_title ?>">
-        <br><br>
+        <label for="title_for_label">Title</label><br>
+        <input class="form-control col-5" type="text" name="title" id="title_for_label" value="<?= $tableauF->disc_title ?>">
+        <br>
 
         <label for="artist_for_label">Artist</label><br>
-        <input class="form-control" type="text" name="artist" id="artist_for_label" value="<?= $tableauF->artist_name ?>">        <br><br>
+        <input class="form-control col-5" type="text" name="artist" id="artist_for_label" value="<?= $tableauF->artist_name ?>">        
+        <br>
 
         <label for="year_for_label">Year</label><br>
-        <input class="form-control" type="text" name="year" id="year_for_label" value="<?= $tableauF->disc_year ?>">
-        <br><br>
+        <input class="form-control col-5" type="text" name="year" id="year_for_label" value="<?= $tableauF->disc_year ?>">
+        <br>
 
         <label for="genre_for_label">Genre</label><br>
-        <input class="form-control" type="text" name="genre" id="genre_for_label" value="<?= $tableauF->disc_genre ?>">
-        <br><br>
+        <input class="form-control col-5" type="text" name="genre" id="genre_for_label" value="<?= $tableauF->disc_genre ?>">
+        <br>
 
         <label for="label_for_label">Label</label><br>
-        <input class="form-control" type="text" name="label" id="label_for_label" value="<?= $tableauF->disc_label ?>">
-        <br><br>
+        <input class="form-control col-5" type="text" name="label" id="label_for_label" value="<?= $tableauF->disc_label ?>">
+        <br>
 
         <label for="price_for_label">Price</label><br>
-        <input class="form-control" type="text" name="price" id="price_for_label" value="<?= $tableauF->disc_price ?>">
-        <br><br>
+        <input class="form-control col-5" type="text" name="price" id="price_for_label" value="<?= $tableauF->disc_price ?>">
+        <br>
 
         <label for="fichier_for_label">Picture</label><br>
-        <input type="file" name="fichier" id="fichier_for_label">
+        <input  type="file" name="fichier" id="fichier_for_label">
         <br>
-        <input  value="" type="image" name="fichier" src="img/<?= $tableauF->disc_picture; ?>" width="200px" id="image_for_label<?php= $myArtist->disc_title; ?>">
+        <input  value="" type="image" name="fichier" src="img/<?= $tableauF->disc_picture; ?>" width="275px" id="image_for_label<?php= $myArtist->disc_title; ?>">
         <br>
 
         <input class="btn btn-primary" type="submit" value="Modifier">

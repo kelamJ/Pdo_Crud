@@ -49,7 +49,7 @@
         <div class="row p-3">
             <h3 class="col-8 ">Liste des disques(<?= $result?>) </h3>
             <!-- Ici, on ajoute une colonne pour insérer un nouveau disque-->
-            <button class="btn-primary" name="ajouter"><a class="btn-primary" href="disc_new.php">Ajouter</a></button>
+            <button class="btn-primary" name="ajouter"><a class="btn-primary btn-sm" href="disc_new.php">Ajouter</a></button>
         </div>
     <table>
 

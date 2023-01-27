@@ -23,16 +23,16 @@
     <h1>Ajouter un vinyle</h1>
 
     <br>
-    <br>
+
 
     <form action ="script_disc_ajout.php" method="post">
 
         <label for="title_for_label">Title</label><br>
-        <input type="text" name="title" id="title_for_label">
+        <input class="form-control col-4" value="Enter title" type="text" name="title" id="title_for_label">
         <br>
         
         <label for="nom_for_label">Artist</label><br>
-        <select name="nom" id="nom_for_label" class="col-2">
+        <select class="form-control col-4" name="nom" id="nom_for_label" class="col-2">
             <option disabled selected>Sélectionner un artiste</option>
             <?php foreach($tableauD as $disc):?>
                 <option value="<?=$disc->artist_id?>"><?=$disc->artist_name?></option>
@@ -40,30 +40,30 @@
         </select>
         
 
-        <br><br>
+        <br>
 
         <label for="annee_for_label">Year</label><br>
-        <input type="text" name="year" id="annee_for_label">
-        <br><br>
+        <input class="form-control col-4" value="Enter year" type="text" name="year" id="annee_for_label">
+        <br>
 
         <label for="genre_for_label">Genre</label><br>
-        <input type="text" name="genre" id="genre_for_label">
-        <br><br>
+        <input class="form-control col-4" value="Enter genre (Rock, Pop, Prog ...)" type="text" name="genre" id="genre_for_label">
+        <br>
 
         <label for="label_for_label">Label</label><br>
-        <input type="text" name="label" id="label_for_label">
-        <br><br>
+        <input class="form-control col-4" value="Enter label (EMI, Warner, PolyGram, Univers sale ...)" type="text" name="label" id="label_for_label">
+        <br>
 
         <label for="price_for_label">Price</label><br>
-        <input type="text" name="price" id="price_for_label">
-        <br><br>
+        <input class="form-control col-4" type="text" name="price" id="price_for_label">
+        <br>
 
         <label for="fichier_for_label">Picture</label><br>
         <input type="file" name="fichier" id="fichier_for_label">
         <br><br>
 
-        <input type="submit" value="Ajouter">
-        <button><a href="disc.php">Retour</a></button>
+        <input class="btn-primary btn" type="submit" value="Ajouter">
+        <a class="btn-primary btn" href="disc.php">Retour</a>
 
     </form>
 
