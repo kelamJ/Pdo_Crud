@@ -30,45 +30,50 @@
 </head>
 <body>
 <!-- // Début de page : traitement PHP + entête HTML  // ... -->
-        <div class="row p-3">
-            <h3 class="col-8 ">Liste des disques(<?= $result?>) </h3>
+        <div class="row p-2">
+            <h3 style="font-weight: bold;" class="col-10">Liste des disques(<?= $result?>) </h3>
             <!-- Ici, on ajoute une colonne pour insérer un nouveau disque-->
             <button class="btn-primary" name="ajouter"><a class="btn-primary btn-sm" href="disc_new.php">Ajouter</a></button>
         </div>
-        <div class="card-deck">
-            <div class="card">
-    <table>
-        <?php foreach ($tableau as $disc): ?>
-        <tr>
-                <td hidden name="id" value="<?=$disc->disc_id?>"></td>
-                <td> 
-                    <img class="flex-column" src="img/<?= $disc->disc_picture?>" alt="jaquette" height="150px" width="150px">
-                </td>
-                <td class="fs-6">
-                    <span class="fs-1">
-                        <?= $disc->disc_title ?>
-                </span>
-                <br>
-                    <span class="fs-2">
-                        <?= $disc->artist_name ?> <br>
-                    </span>
-                    <span class="fw-bold">
-                        Label :</span><?= $disc->disc_label ?> <br>
-                    <span class="fw-bold">
-                        Year :</span><?= $disc->disc_year ?> <br>
-                    <span class="fw-bold">
-                        Genre :</span> <?= $disc->disc_genre ?> <br>
-                        <!-- Ici, on ajoute un lien par artiste pour accéder à sa fiche : -->
-                        <span class="">
-                            <a class="btn-primary btn-sm" href="disc_detail.php?id=<?= $disc->disc_id ?>">Détails</a>
-                        </span>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
-            </div>
 
+        <div class="container align-self-center ps-3 mt-3">
+            <div class="card-group border-0 mb-3" style="max-width: 1265px;">
+                    <?php foreach ($tableau as $disc): ?>
+                        <div class="col-6 ps-3">
+                            <div class="row g-0">
+                                    <p hidden name="id" value="<?=$disc->disc_id?>"></p>
+                                    <div class="col-md-4">
+                                        <img src="img/<?= $disc->disc_picture?>" alt="jaquette" class="card-img rounded img-fluide">
+                                    </div>
+                                    <div class="col-md-8 ps-2">
+                                        <div class="card-body pt-0">
+                                            <h5 class="card-title">
+                                                <?= $disc->disc_title ?>
+                                            </h5>
+                                            <p class="card-text mb-0">
+                                                <?= $disc->artist_name ?> 
+                                                <br>
+                                            <span class="fw-bold">
+                                                Label :</span><?= $disc->disc_label ?> 
+                                                <br>
+                                            <span class="fw-bold">
+                                                Year :</span><?= $disc->disc_year ?> 
+                                                <br>
+                                            <span class="fw-bold">
+                                                Genre :</span> <?= $disc->disc_genre ?> 
+                                            </p>
+                                                <!-- Ici, on ajoute un lien par artiste pour accéder à sa fiche : -->
+                                                <a class="btn-primary btn-sm" href="disc_detail.php?id=<?= $disc->disc_id ?>">Détails</a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+            </div>
         </div>
+
+
+
 
     </div>
 <!-- 

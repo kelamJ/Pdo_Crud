@@ -28,7 +28,7 @@
     <form action ="script_disc_ajout.php" method="post">
 
         <label for="title_for_label">Title</label><br>
-        <input class="form-control col-4" value="Enter title" type="text" name="title" id="title_for_label">
+        <input class="form-control col-4" placeholder="Enter title" type="text" name="title" id="title_for_label">
         <br>
         
         <label for="nom_for_label">Artist</label><br>
@@ -43,19 +43,19 @@
         <br>
 
         <label for="annee_for_label">Year</label><br>
-        <input class="form-control col-4" value="Enter year" type="text" name="year" id="annee_for_label">
+        <input class="form-control col-4" placeholder="Enter year" type="text" name="year" id="annee_for_label">
         <br>
 
         <label for="genre_for_label">Genre</label><br>
-        <input class="form-control col-4" value="Enter genre (Rock, Pop, Prog ...)" type="text" name="genre" id="genre_for_label">
+        <input class="form-control col-4" placeholder="Enter genre (Rock, Pop, Prog ...)" type="text" name="genre" id="genre_for_label">
         <br>
 
         <label for="label_for_label">Label</label><br>
-        <input class="form-control col-4" value="Enter label (EMI, Warner, PolyGram, Univers sale ...)" type="text" name="label" id="label_for_label">
+        <input class="form-control col-4" placeholder="Enter label (EMI, Warner, PolyGram, Univers sale ...)" type="text" name="label" id="label_for_label">
         <br>
 
         <label for="price_for_label">Price</label><br>
-        <input class="form-control col-4" type="text" name="price" id="price_for_label">
+        <input class="form-control col-4" placeholder="Enter Price" name="price" id="price_for_label">
         <br>
 
         <label for="fichier_for_label">Picture</label><br>
